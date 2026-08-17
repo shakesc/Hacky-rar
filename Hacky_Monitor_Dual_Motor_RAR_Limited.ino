@@ -436,7 +436,7 @@ MPU6050 mpu(Wire);
   pinMode(encoderDT, INPUT);
   pinMode(encoderRotC, INPUT_PULLUP);
   lastStateCLK = digitalRead(encoderCLK);  // Read the initial state of CLK
-  //attachInterrupt(digitalPinToInterrupt(encoderCLK), updateEncoder, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(encoderCLK), updateEncoder, CHANGE);
 
   // Kick off the timers for reading sensors
   displayDelay.start(DISPLAY_UPDATE_DELAY);
